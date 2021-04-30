@@ -1,0 +1,160 @@
+body {
+  background-image: url("/images/background.jpg");
+  height:100%;
+  width:100%;
+}
+
+@font-face {
+  font-family: CiscoFont;
+  src: url("/fonts/CiscoSansTTRegular.ttf");
+}
+
+#container {
+  height:100%;
+  width:100%;
+}
+
+#server_div {
+  max-height: 175px;
+}
+
+.ciscoFont {
+  color:white;
+  font-family: CiscoFont;
+}
+
+.largeFont {
+  font-size: 26px;
+}
+
+.smallFont {
+  font-size: 14px;
+}
+
+.smallestFont {
+  font-size: 12px;
+}
+
+.server_text {
+  padding-left: 5px;
+}
+
+.server_begin {
+  float: left;
+}
+
+.server_status {
+  float: left;
+  text-shadow: 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,1px 1px 0 #ffffff, -1px -1px 0 #ffffff;
+}
+
+.server_up {
+  color: #72ce5b;
+}
+
+.server_down {
+  color: #ef5c6d;
+}
+
+.absolute_center {
+  margin: auto;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  width:256px;
+
+}
+
+.absolute_center_old {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:256px;
+  transform: translateY(-100px);
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  left: -50px;
+  right:0;
+  margin:auto;
+  top: 60px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #72ce5b;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ef5c6d;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ef5c6d;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#comments {
+  bottom: 30px;
+  left: 20px;
+  position: absolute;
+  max-width: 30%;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment:hover{
+  color:#66ff66;
+  cursor:pointer;
+}

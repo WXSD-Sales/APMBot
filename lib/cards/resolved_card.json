@@ -1,0 +1,83 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Resolved!",
+            "color": "Accent"
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "ID",
+                    "value": "RANDOM ID"
+                }
+            ]
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "HOSTNAME",
+                    "value": "YOUR SERVER"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Your server went live at {0}",
+            "wrap": true,
+            "color": "Good"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Acknowledge",
+                    "data":{"id":"RANDOM ID", "submit":"ack_res", "url":"LINK"}
+                },
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "View",
+                    "url":"LINK"
+                },
+                {
+                    "type": "Action.ShowCard",
+                    "title": "Add Comment",
+                    "card":{"type": "AdaptiveCard",
+                            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                            "version": "1.2",
+                            "body": [
+                                    {
+                                        "id":"comment",
+                                        "type": "Input.Text",
+                                        "placeholder": "Write your comment here.",
+                                        "spacing": "default"
+                                    },
+                                    {
+                                        "type": "ActionSet",
+                                        "actions": [
+                                            {
+                                                "type": "Action.Submit",
+                                                "title": "Add Comment",
+                                                "data": {
+                                                    "url": "LINK",
+                                                    "id": "RANDOM ID",
+                                                    "submit": "inc"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                        }
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}

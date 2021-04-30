@@ -1,0 +1,32 @@
+{% import json %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/favicon.ico"/>
+  </head>
+  <title>APM Bot Demo</title>
+  <body>
+    <div id="container" class="ciscoFont" style="display:none">
+      <div id="server_div" class="absolute_center">
+        <div class="server_text largeFont">
+          <div class="server_begin">Server is&nbsp;</div><div class="server_status server_up">Running</div>
+        </div>
+        <label class="switch">
+          <input id="server" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <img src="/images/server.png" ></img>
+      </div>
+      <div id="comments">
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var app = {% raw json.dumps(app) %}
+    </script>
+    <script src="/js/index.js" async ></script>
+  </body>
+</html>
