@@ -12,7 +12,7 @@
             "type": "FactSet",
             "facts": [
                 {
-                    "title": "ID",
+                    "title": "INCIDENT ID",
                     "value": "RANDOM ID"
                 }
             ]
@@ -21,8 +21,8 @@
             "type": "FactSet",
             "facts": [
                 {
-                    "title": "HOSTNAME",
-                    "value": "YOUR SERVER"
+                    "title": "SERVER",
+                    "value": "192.123.255.001"
                 }
             ]
         },

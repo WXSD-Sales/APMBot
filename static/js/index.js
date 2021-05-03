@@ -44,7 +44,7 @@ function addComment(commentObj){
   let message = commentObj["comment"]["message"];
   let comment = $("<div>").addClass("comment")
     .append($("<div>").addClass("smallestFont").text(author))
-    .append($("<div>").addClass("smallFont").text(message))
+    .append($("<div>").addClass("smallFont").html(message))//will render comment as HTML - useful for bold font, but probably don't want to do this in a real world scenario
   $("#comments").append(comment);
   if($("#comments").children().length > 10){
     $($("#comments").children()[0]).remove();

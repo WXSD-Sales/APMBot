@@ -147,7 +147,6 @@ input:checked + .slider:before {
   bottom: 30px;
   left: 20px;
   position: absolute;
-  max-width: 30%;
 }
 
 .comment {

@@ -51,20 +51,23 @@ class MongoController(object):
         return result
 
     def get_comments(self, id, timestamp_float=None):
-        projection = {"_id":0, "comment":1, "timestamp_float":1}
-        if timestamp_float == None:
-            app = self.issues.find_one({"id":id})
-            if app != None:
-                app.pop("_id")
-                app.pop("timestamp")
+        try:
+            projection = {"_id":0, "comment":1, "timestamp_float":1}
+            if timestamp_float == None:
+                app = self.issues.find_one({"id":id})
+                if app != None:
+                    app.pop("_id")
+                    app.pop("timestamp")
+                else:
+                    app = {}
+                comments = list(self.comments.find({"id":id}, projection))
+                app.update({"comments":comments})
+                return app
             else:
-                app = {}
-            comments = list(self.comments.find({"id":id}, projection))
-            app.update({"comments":comments})
-            return app
-        else:
-            comments = list(self.comments.find({"id":id, "timestamp_float" : {"$gt":timestamp_float} }, projection))
-            return comments
+                comments = list(self.comments.find({"id":id, "timestamp_float" : {"$gt":timestamp_float} }, projection))
+                return comments
+        except Exception as e:
+            traceback.print_exc()
 
 
 if __name__ == "__main__":

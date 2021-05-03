@@ -52,16 +52,20 @@ class MainHandler(BaseHandler):
                 if webhook['data']['personId'] != Settings.bot_id:
                     print("MainHandler Webhook Received:")
                     print(webhook)
-                    response = yield self.application.settings['spark'].get_with_retries_v2('https://api.ciscospark.com/v1/messages/{0}'.format(webhook['data']['id']))
-                    print("response.BODY:{0}".format(response.body))
-                    reply_msg = 'You said, "{0}".'.format(response.body.get('text'))
-                    if reply_msg != '':
-                        yield self.application.settings['spark'].post_with_retries('https://api.ciscospark.com/v1/messages', {'markdown':reply_msg, 'roomId':webhook['data']['roomId']})
+                    reply_msg = self.help_msg()
+                    yield self.application.settings['spark'].post_with_retries('https://api.ciscospark.com/v1/messages', {'markdown':reply_msg, 'roomId':webhook['data']['roomId']})
             else:
                 print("CardsHandler Secret does not match")
         except Exception as e:
             print("CardsHandler General Error:{0}".format(e))
             traceback.print_exc()
+
+    def help_msg(self):
+        msg = "To use this bot, login with your Webex account [here](https://webex-apm-demo.herokuapp.com/).\n\n"
+        msg += "If you toggle the status of your mock server on that page, this bot will send you a card.   \n"
+        msg += "You can interact with the card to see real time updates on the mock server page.\n\n"
+        msg += "Any actions you take on the mock server page or with this bot will only be visible to you (from the account you used to sign in)."
+        return msg
 
 class CardsHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
@@ -91,18 +95,16 @@ class CardsHandler(tornado.web.RequestHandler):
                 person_obj = yield self.application.settings['spark'].get_with_retries_v2('https://api.ciscospark.com/v1/people/{0}'.format(person_id))
                 display_name = person_obj.body.get('displayName')
                 if inputs.get('submit') in ["ack","ack_res"] and inputs.get('id') not in [None, ""]:
-                    #yield self.application.settings['spark'].delete('https://api.ciscospark.com/v1/messages/{0}'.format(message_id))
-                    message = "Event ID: **{0}** has been acknowledged by ".format(inputs.get('id'))
+                    message = "Incident ID: <b>{0}</b> has been acknowledged by ".format(inputs.get('id'))
                     comment = {"author":"System", "message":message + display_name}
-                    result = self.application.settings['db'].insert(inputs["id"], comment=comment)
+                    result = self.application.settings['db'].insert(person_id, comment=comment)
                     reply_msg = message + person + ". View it [here]({0}).".format(inputs["url"])
                 elif inputs.get('submit') == "inc":
                     if inputs.get('comment') in [None, ""]:
                         reply_msg = "Comment cannot be blank."
                     else:
                         comment = {"author":display_name, "message":inputs.get('comment')}
-                        result = self.application.settings['db'].insert(inputs["id"], comment=comment)
-                        #yield self.application.settings['spark'].delete('https://api.ciscospark.com/v1/messages/{0}'.format(message_id))
+                        result = self.application.settings['db'].insert(person_id, comment=comment)
                         reply_msg = "Comment added.  View it at {0}".format(inputs["url"])
                 if reply_msg != '':
                     yield self.application.settings['spark'].post_with_retries('https://api.ciscospark.com/v1/messages', {'markdown':reply_msg, 'roomId':room_id})
@@ -116,15 +118,18 @@ class CommentsHandler(BaseHandler):
     @tornado.web.asynchronous
     @tornado.gen.coroutine
     def get(self):
-        person = self.get_current_user()
-        if not person:
-            self.redirect('/login')
-        else:
-            timestamp = self.get_argument("timestamp")
-            print(timestamp)
-            comments = self.application.settings['db'].get_comments(person['id'], float(timestamp))
-            print(comments)
-            self.write({"comments":comments})
+        try:
+            person = self.get_current_user()
+            if not person:
+                self.redirect('/login')
+            else:
+                timestamp = self.get_argument("timestamp")
+                print(timestamp)
+                comments = self.application.settings['db'].get_comments(person['id'], float(timestamp))
+                print(comments)
+                self.write({"comments":comments})
+        except Exception as e:
+            traceback.print_exc()
 
 class ToggleHandler(BaseHandler):
     @tornado.web.asynchronous
@@ -158,7 +163,8 @@ class ToggleHandler(BaseHandler):
             card_json = self.load_card('lib/cards/resolved_card.json')
         else:
             card_json = self.load_card('lib/cards/alert_card.json')
-        id = self.get_current_user()["id"]
+        #id = self.get_current_user()["id"]
+        id = "SI_A1234"
         url = Settings.base_uri
         card_json["body"][1]["facts"][0]["value"]= id #set the card Id
         card_json["body"][3]["text"] = card_json["body"][3]["text"].format(datetime.utcnow().strftime("%H:%M:%S")) #set the timestamp
@@ -168,7 +174,6 @@ class ToggleHandler(BaseHandler):
         card_json["body"][4]["actions"][2]["card"]["body"][1]["actions"][0]["data"]["url"]= url #set the event url
         card_json["body"][4]["actions"][2]["card"]["body"][1]["actions"][0]["data"]["id"]= id #set the card Id
         card_json = self.finalize_card_json(toPersonId, card_json)
-        #print(json.dumps(card_json, indent=4))
         yield self.application.settings['spark'].post_with_retries('https://api.ciscospark.com/v1/messages', card_json)
 
     def load_card(self, filepath):

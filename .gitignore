@@ -1,3 +1,5 @@
+lib/.DS_STORE
+static/.DS_STORE
 *.DS_STORE
 *.pyc
 dev_setup.sh
