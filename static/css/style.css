@@ -48,9 +48,17 @@ body {
   font-size: 12px;
 }
 
+.logo-icon {
+  display: inline-block;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
 .circle-icon {
-  margin-left: 10px;
-  display: inherit;
+  margin:auto;
+  top:0;
+  bottom:0;
+  position: absolute;
   color:white;
 }
 
@@ -180,6 +188,34 @@ input:checked + .slider:before {
 .comment:hover{
   color:#66ff66;
   cursor:pointer;
+}
+
+.header {
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #24282b;
+  text-align: center;
+  padding: 5px;
+}
+
+.header-items {
+  display:inline-flex;
+}
+
+.link-item {
+  height:100%;
+  display: inline-block;
+}
+
+.header-item {
+  top:0;
+  bottom:0;
+  position: relative;
+  margin: auto;
+  margin-right: 10px;
 }
 
 .footer {
