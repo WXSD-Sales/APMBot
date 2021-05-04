@@ -1,7 +1,13 @@
 body {
   background-image: url("/images/background.jpg");
+  background-position: 0 50px;
   height:100%;
   width:100%;
+}
+
+.myrow {
+  display: flex;
+  justify-content: center;
 }
 
 @font-face {
@@ -15,7 +21,11 @@ body {
 }
 
 #server_div {
-  max-height: 175px;
+  max-height: 150px;
+}
+
+#server_img {
+  transform: translateX(22px);
 }
 
 .ciscoFont {
@@ -24,7 +34,11 @@ body {
 }
 
 .largeFont {
-  font-size: 26px;
+  font-size: 24px;
+}
+
+.mediumFont {
+  font-size: 20px;
 }
 
 .smallFont {
@@ -36,7 +50,8 @@ body {
 }
 
 .server_text {
-  padding-left: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .server_begin {
@@ -59,7 +74,7 @@ body {
 .absolute_center {
   margin: auto;
   position: absolute;
-  top: 40px;
+  top: 100px;
   left: 0;
   right: 0;
   width:256px;
@@ -79,13 +94,13 @@ body {
 
 .switch {
   position: absolute;
-  display: inline-block;
   width: 60px;
   height: 34px;
-  left: -50px;
+  left: 0px;
   right:0;
   margin:auto;
   top: 60px;
+  z-index: 100;
 }
 
 /* Hide default HTML checkbox */
@@ -143,10 +158,14 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-#comments {
-  bottom: 30px;
+#comments_div {
+  bottom: 45px;
   left: 20px;
   position: absolute;
+}
+
+#logs_header {
+  margin-bottom: 10px;
 }
 
 .comment {
@@ -156,4 +175,19 @@ input:checked + .slider:before {
 .comment:hover{
   color:#66ff66;
   cursor:pointer;
+}
+
+.footer {
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #24282b;
+  text-align: center;
+  padding: 5px;
+}
+
+.custom_a {
+  color:white;
 }

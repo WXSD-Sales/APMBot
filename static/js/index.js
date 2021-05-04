@@ -46,13 +46,14 @@ function addComment(commentObj){
     .append($("<div>").addClass("smallestFont").text(author))
     .append($("<div>").addClass("smallFont").html(message))//will render comment as HTML - useful for bold font, but probably don't want to do this in a real world scenario
   $("#comments").append(comment);
-  if($("#comments").children().length > 10){
+  let maxComments = 8
+  if($("#comments").children().length > maxComments){
     $($("#comments").children()[0]).remove();
   }
-  if($("#comments").children().length > 9){
+  if($("#comments").children().length > maxComments - 1){
     $($("#comments").children()[0]).css('opacity', '0.4');
     $($("#comments").children()[1]).css('opacity', '0.7');
-  } else if($("#comments").children().length > 8){
+  } else if($("#comments").children().length > maxComments - 2){
     $($("#comments").children()[0]).css('opacity', '0.7');
   }
 }

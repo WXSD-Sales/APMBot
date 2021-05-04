@@ -3,12 +3,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/css/collab-ui.min.css" />
+    <link rel="stylesheet" href="/css/momentum-ui.min.css" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.ico"/>
   </head>
   <title>APM Bot Demo</title>
   <body>
     <div id="container" class="ciscoFont" style="display:none">
+      <header class="md-top-bar md-top-bar--dark myrow">
+        <div class="md-top-bar__brand">
+          <a class="md-brand" href="/">
+            <div class="md-brand__logo md-brand__logo--pad">
+              <i class="icon icon-cisco-logo"></i>
+            </div>
+            <div class="largeFont">APM Notification Bot</div>
+          </a>
+        </div>
+      </header>
       <div id="server_div" class="absolute_center">
         <div class="server_text largeFont">
           <div class="server_begin">Server is&nbsp;</div><div class="server_status server_up">Running</div>
@@ -17,10 +29,16 @@
           <input id="server" type="checkbox">
           <span class="slider round"></span>
         </label>
-        <img src="/images/server.png" ></img>
+        <img id="server_img" src="/images/server.png" ></img>
       </div>
-      <div id="comments">
+      <div id="comments_div">
+        <div id="logs_header" class="mediumFont">Logs & Comments</div>
+        <div id="comments">
+        </div>
       </div>
+    </div>
+    <div class="footer mediumFont">
+      <a class="custom_a" href="mailto:wxsd@external.cisco.com">wxsd@external.cisco.com</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

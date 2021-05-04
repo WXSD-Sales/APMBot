@@ -64,7 +64,9 @@ class MainHandler(BaseHandler):
         msg = "To use this bot, login with your Webex account [here](https://webex-apm-demo.herokuapp.com/).\n\n"
         msg += "If you toggle the status of your mock server on that page, this bot will send you a card.   \n"
         msg += "You can interact with the card to see real time updates on the mock server page.\n\n"
-        msg += "Any actions you take on the mock server page or with this bot will only be visible to you (from the account you used to sign in)."
+        msg += "Any actions you take on the mock server page or with this bot will only be visible to you (from the account you used to sign in).\n\n"
+        msg += "You can find a walkthrough for this demo, along with the code at: https://github.com/WXSD-Sales/APMBot  \n"
+        msg += "If you have any questions or ideas for features you would like to see added, please reach out to wxsd@external.cisco.com"
         return msg
 
 class CardsHandler(tornado.web.RequestHandler):
