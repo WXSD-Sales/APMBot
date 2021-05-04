@@ -8,9 +8,11 @@ Installation is only needed if you wish to host a version of this bot yourself.<
 <!-- GETTING STARTED -->
 ### Walkthrough
 
+A video walkthrough of this application can be found [here](TBA).  Or, simply follow the steps below:<br/>
+<br/>
 1. To use this application as it exists in production, [click here](https://webex-apm-demo.herokuapp.com/).
 2. Sign in with your Webex account credentials.
-3. Toggle the server switch.
+3. Toggle the server switch.<br/>
 [![Switch Screen Shot][switch-screenshot]](https://wxsd-sales.github.io/APMBot/)
 4. Check your Webex client. Toggling the switch should have caused the bot to sent you an alert card.
 5. Add a comment to the card.
@@ -18,9 +20,6 @@ Installation is only needed if you wish to host a version of this bot yourself.<
 6. Submitting the comment should result in an update on the production page after a few seconds:
 [![Site Screen Shot][site-screenshot]](https://wxsd-sales.github.io/APMBot/)
 
-
-A video walkthrough of this application can be found here:
-https://drive.google.com/file/d/1MZzoXa_ZOkpHL1qDP_ZcIHwU4C-YhSVl/view?usp=sharing
 
 ### Installation
 
