@@ -8,7 +8,7 @@ Installation is only needed if you wish to host a version of this bot yourself.<
 ### Walkthrough
 
 A video walkthrough of this application can be found [here](TBA).  Or, simply follow the steps below:<br/>
-<br/>
+
 1. To use this application as it exists in production, [click here](https://webex-apm-demo.herokuapp.com/).
 2. Sign in with your Webex account credentials.
 3. Toggle the server switch.<br/>
