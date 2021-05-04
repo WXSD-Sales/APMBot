@@ -1,5 +1,8 @@
 # APMBot
-This demo has been tested in Python3 only (v3.8.1)
+This demo has been tested in Python3 only (v3.8.1)<br/>
+If you simply want to use this application, you only need to follow the Walkthrough.<br/>
+<br/>
+Installation is only needed if you wish to host a version of this bot yourself.<br/>
 
 
 <!-- GETTING STARTED -->
@@ -126,21 +129,21 @@ This can remain unchanged.  Remember to update the DB in the ```MY_MONGO_URL``` 
 ## Webhooks
 
 This application requires 2 webhooks. To create them through the developer portal [click here](https://developer.webex.com/docs/api/v1/webhooks/create-a-webhook).
-1.Use the Try It Editor on the right side of the page
-2.Untoggle the "Use my personal access token" switch
-3.Paste the bot's token in that field.
-4.Enter any name
-5.targetUrl: Enter your ```BASE_URI```
-6.resource: ```messages```
-7.event: ```created```
-8.secret: Enter your ```MY_SECRET_PHRASE``` value
+1.Use the Try It Editor on the right side of the page<br/>
+2.Untoggle the "Use my personal access token" switch<br/>
+3.Paste the bot's token in that field.<br/>
+4.Enter any name<br/>
+5.targetUrl: Enter your ```BASE_URI```<br/>
+6.resource: ```messages```<br/>
+7.event: ```created```<br/>
+8.secret: Enter your ```MY_SECRET_PHRASE``` value<br/>
 <br/>
-Repeat this process a second time, to create an attachment Action webhook, will slight differences:
-4.Enter any name
-5.targetUrl: Enter your ```BASE_URI``` + ```/cards```
-6.resource: ```attachmentActions```
-7.event: ```created```
-8.secret: Enter your ```MY_SECRET_PHRASE``` value
+Repeat this process a second time, to create an attachment Action webhook, will slight differences:<br/>
+4.Enter any name<br/>
+5.targetUrl: Enter your ```BASE_URI``` + ```/cards```<br/>
+6.resource: ```attachmentActions```<br/>
+7.event: ```created```<br/>
+8.secret: Enter your ```MY_SECRET_PHRASE``` value<br/>
 
 
 <!-- CONTACT -->
