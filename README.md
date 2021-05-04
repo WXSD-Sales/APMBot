@@ -17,7 +17,7 @@ A video walkthrough of this application can be found [here](TBA).  Or, simply fo
 5. Add a comment to the card.<br/>
 <img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-bot-card.png" width="600"><br/>
 6. Submitting the comment should result in an update on the production page after a few seconds:<br/>
-<img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-site.png" width="600">
+<img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-site.png" width="600"><br/>
 
 
 ### Installation
