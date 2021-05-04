@@ -8,15 +8,6 @@
 #heroku container:release web
 ###########################################################################
 
-#TODO: MONDAY:
-#4. setup a real remote git origin on WXSDSales (not heroku git)
-
-#5. Footer (wxsd@external.cisco.com)
-#6. Header APM Notification Bot
-#9. Add Comments & Logs Header section
-#7. Hardcode server IP, Incident ID (consistent naming on both sides)
-#8. Add Help message that tells what to do.
-
 FROM python:3.7.4
 
 # File Author / Maintainer

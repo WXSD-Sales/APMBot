@@ -203,11 +203,7 @@ input:checked + .slider:before {
 
 .header-items {
   display:inline-flex;
-}
-
-.link-item {
-  height:100%;
-  display: inline-block;
+  margin:5px;
 }
 
 .header-item {
@@ -216,6 +212,11 @@ input:checked + .slider:before {
   position: relative;
   margin: auto;
   margin-right: 10px;
+}
+
+.link-item {
+  height:100%;
+  display: inline-block;
 }
 
 .footer {
