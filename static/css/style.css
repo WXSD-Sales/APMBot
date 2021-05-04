@@ -1,6 +1,5 @@
 body {
-  background-image: url("/images/background.jpg");
-  background-position: 0 50px;
+  background-image: url("/images/background-cropped.png");
   height:100%;
   width:100%;
 }
@@ -47,6 +46,12 @@ body {
 
 .smallestFont {
   font-size: 12px;
+}
+
+.circle-icon {
+  margin-left: 10px;
+  display: inherit;
+  color:white;
 }
 
 .server_text {
