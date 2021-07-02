@@ -176,9 +176,3 @@ Distributed under the MIT License.
 ## Contact
 Please contact us at wxsd@external.cisco.com
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[switch-screenshot]: static/images/walkthrough/demo-switch.png
-[site-screenshot]: static/images/walkthrough/demo-site.png
-[bot-screenshot]: static/images/walkthrough/demo-bot-card.png
