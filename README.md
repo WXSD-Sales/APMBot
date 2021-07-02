@@ -1,13 +1,25 @@
-# APMBot
-This demo has been tested in Python3 only (v3.8.1)<br/>
-If you simply want to use this application, you only need to follow the Walkthrough.<br/>
-<br/>
-Installation is only needed if you wish to host a version of this bot yourself.<br/>
+<p align="center">
+  <h2 align="center"> APM Bot</h2>
 
-<!-- GETTING STARTED -->
+  <p align="center">
+   This demo sends error and resolution messages with Buttons and Cards to the logged-in user when that user toggles the simulated server. That user can interact with the Card buttons, and post comments back to the web page.
+   This showcases the art of the possible for handling notifications from APM Services like AppDynamics, Datadog, Splunk, Dynatrace and more! 
+    <br />
+    <a href="https://webex-apm-demo.herokuapp.com/"><strong>View Demo</strong></a>
+    ·
+    <a href="https://github.com/WXSD-Sales/APMBot/issues"><strong>Report Bug</strong></a>
+    ·
+    <a href="https://github.com/WXSD-Sales/APMBot/issues"><strong>Request Feature</strong></a>
+  </p>
+</p>
+
+## About The Project
+
+### Video Demo
+
+[![APM Bot Video Demo](https://img.youtube.com/vi/ZLetz4AjoXQ/0.jpg)](https://youtu.be/ZLetz4AjoXQ, "APM Bot Video Demo")
+
 ### Walkthrough
-
-A video walkthrough of this application can be found [here](https://youtu.be/ZLetz4AjoXQ).  Or, simply follow the steps below:<br/>
 
 1. To use this application as it exists in production, [click here](https://webex-apm-demo.herokuapp.com/).
 2. Sign in with your Webex account credentials.
@@ -19,10 +31,19 @@ A video walkthrough of this application can be found [here](https://youtu.be/ZLe
 6. Submitting the comment should result in an update on the production page after a few seconds:<br/>
 <img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-site.png" width="600"><br/>
 
+### Built With
+
+- Python3 (v3.8.1)  
+
+<!-- GETTING STARTED -->
+
+## Installation
+
+If you simply want to use this application, you only need to follow the Walkthrough.<br/>
+<br/>
+Installation is only needed if you wish to host a version of this bot yourself.<br/>
 
 ### Installation
-
-To run this project yourself, you can follow these installation instructions.
 
 1. Clone the repo
    ```sh
@@ -144,11 +165,16 @@ Repeat this process a second time, to create an attachment Action webhook, will 
 8.secret: Enter your ```MY_SECRET_PHRASE``` value<br/>
 
 
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. 
+
 <!-- CONTACT -->
 
 ## Contact
-
-Cisco Center of Excellent Developers - wxsd@external.cisco.com
+Please contact us at wxsd@external.cisco.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
