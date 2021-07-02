@@ -81,7 +81,7 @@ Installation is only needed if you wish to host a version of this bot yourself.<
    
 <!-- ENV VARS -->
 
-## Environment Variables
+### Environment Variables
 ```
 MY_BOT_TOKEN
 ``` 
@@ -145,7 +145,7 @@ This can remain unchanged.  Remember to update the DB in the ```MY_MONGO_URL``` 
 
 <!-- WEBHOOKS -->
 
-## Webhooks
+### Webhooks
 
 This application requires 2 webhooks. To create them through the developer portal [click here](https://developer.webex.com/docs/api/v1/webhooks/create-a-webhook).
 1.Use the Try It Editor on the right side of the page<br/>
