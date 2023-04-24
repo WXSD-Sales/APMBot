@@ -24,24 +24,24 @@
 1. To use this application as it exists in production, [click here](https://webex-apm-demo.herokuapp.com/).
 2. Sign in with your Webex account credentials.
 3. Toggle the server switch.<br/>
-<img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-switch.png" width="200"><br/>
+<img src="https://wxsd-sales.github.io/apm-bot/static/images/walkthrough/demo-switch.png" width="200"><br/>
 4. Check your Webex client. Toggling the switch should have caused the bot to sent you an alert card.<br/>
 5. Add a comment to the card.<br/>
-<img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-bot-card.png" width="600"><br/>
+<img src="https://wxsd-sales.github.io/apm-bot/static/images/walkthrough/demo-bot-card.png" width="600"><br/>
 6. Submitting the comment should result in an update on the production page after a few seconds:<br/>
-<img src="https://wxsd-sales.github.io/APMBot/static/images/walkthrough/demo-site.png" width="600"><br/>
+<img src="https://wxsd-sales.github.io/apm-bot/static/images/walkthrough/demo-site.png" width="600"><br/>
 
-### Built With
-
-- Python3 (v3.8.1)  
-
-<!-- GETTING STARTED -->
-
-## Installation
+## Setup
 
 If you simply want to use this application, you only need to follow the Walkthrough.<br/>
 <br/>
 Installation is only needed if you wish to host a version of this bot yourself.<br/>
+
+### Prerequisites & Dependencies: 
+
+- Python3 (v3.8.1)  
+
+<!-- GETTING STARTED -->
 
 ### Installation
 
@@ -164,12 +164,13 @@ Repeat this process a second time, to create an attachment Action webhook, will 
 7.event: ```created```<br/>
 8.secret: Enter your ```MY_SECRET_PHRASE``` value<br/>
 
-
-<!-- LICENSE -->
-
 ## License
+All contents are licensed under the MIT license. Please see [license](LICENSE) for details.
 
-Distributed under the MIT License. 
+
+## Disclaimer
+<!-- Keep the following here -->  
+ Everything included is for demo and Proof of Concept purposes only. Use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex usecases, but are not Official Cisco Webex Branded demos.
 
 <!-- CONTACT -->
 
